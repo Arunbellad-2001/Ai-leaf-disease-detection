@@ -1,0 +1,21 @@
+# Core dependencies
+google-genai
+# Ensure you still have FastAPI, Streamlit, etc.
+# e.g., fastapi, streamlit, uvicorn, python-dotenv, pydantic, pillow, numpy, requests
+python-dotenv>=1.0.0
+
+# Additional professional dependencies
+pathlib2>=2.3.7
+typing-extensions>=4.8.0
+
+# API dependencies
+fastapi>=0.116.1
+uvicorn>=0.21.1
+
+# Testing dependencies
+requests>=2.31.0
+
+python-multipart
+
+# Frontend dependencies
+streamlit
