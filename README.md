@@ -1,6 +1,37 @@
-# 🌿 AI-Powered Leaf Disease Detection System
+# 🌿 AI-Based Leaf Disease Detection System
 
-An enterprise-grade AI-powered leaf disease detection system featuring a dual-interface architecture: a FastAPI backend service and an interactive Streamlit web application. Built using **Google's Gemini Vision Model** via the `google-genai` SDK, this system provides accurate disease identification, severity assessment, **plant species identification**, and actionable treatment recommendations for agricultural and horticultural applications.
+An end-to-end, multi-component AI web application that detects plant leaf diseases, identifies plant species, and provides detailed symptoms, causes, and expert treatment recommendations.
+
+---
+
+### 🌐 Live Application Links
+
+* **Frontend Web App (Streamlit):** [https://ai-leaf-disease-detection-vmng66ct7ccvmzezts7ddx.streamlit.app](https://ai-leaf-disease-detection-vmng66ct7ccvmzezts7ddx.streamlit.app)
+* **Backend API Service (Vercel):** [https://ai-leaf-disease-detection-seven.vercel.app](https://ai-leaf-disease-detection-seven.vercel.app)
+
+---
+
+### 📋 Overview of Recent Updates
+
+* **AI Model Migration:** Upgraded the image reasoning engine to active Google Gemini Flash models (`gemini-1.5-flash` / `gemini-2.5-flash`) to ensure higher throughput and reliability.
+* **Serverless Decoupled Deployment:** Migrated the backend to a serverless FastAPI setup on Vercel (`vercel.json`) and hosted the Streamlit user interface on Streamlit Cloud.
+* **Memory-Optimized Image Handling:** Updated `/disease-detection-file` to stream image bytes directly into memory via `UploadFile`, eliminating local disk write dependencies on serverless environments.
+
+---
+
+### 🚀 Running the Project Locally
+
+Follow these steps to set up and run both the backend API and frontend UI on your local machine.
+
+#### Prerequisites
+
+* Python 3.9+ installed
+* A Google Gemini API Key from [Google AI Studio](https://aistudio.google.com/)
+
+#### 1. Clone the Repository
+```bash
+git clone [https://github.com/Arunbellad-2001/leaf-diseases-detect.git](https://github.com/Arunbellad-2001/leaf-diseases-detect.git)
+cd leaf-diseases-detect
 
 ## 🎯 Key Features
 
@@ -39,27 +70,25 @@ Follow these steps to set up and run the project locally.
 ### 1\. Clone the Repository
 
 ```bash
-git clone [YOUR_REPO_URL]
-cd [YOUR_REPO_NAME]
+git [clone https://github.com/Arunbellad-2001/leaf-diseases-detect.git](https://github.com/Arunbellad-2001/leaf-diseases-detect.git)
+cd [cd leaf-diseases-detect]
 ```
 
 ### 2\. Create and Activate Environment
 
-```bash
+# Create a virtual environment
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-```
 
-### 3\. Install Dependencies
+# Activate virtual environment
+# On Windows:
+venv\Scripts\activate
+# On macOS/Linux:
+source venv/bin/activate
 
-Install all required libraries, including the Gemini SDK, FastAPI, and Streamlit.
-
-```bash
+# Install dependencies
 pip install -r requirements.txt
-# Required packages: google-genai, fastapi, uvicorn, streamlit, python-dotenv, requests, Pillow
-```
 
-### 4\. Configure API Key
+### 3\. Configure API Key
 
 Create a file named **`.env`** in the root directory and add your Gemini API key:
 
@@ -77,7 +106,7 @@ The system requires both the backend and frontend to be running simultaneously.
 Navigate to the directory containing your `Leaf Disease/main.py` file and start the server:
 
 ```bash
-uvicorn Leaf\ Disease.main:app --reload
+python -m uvicorn app:app --reload
 # Server will run on http://127.0.0.1:8000
 ```
 
@@ -86,7 +115,7 @@ uvicorn Leaf\ Disease.main:app --reload
 Open a **new terminal tab** (while the backend is running) and start the Streamlit application:
 
 ```bash
-streamlit run app.py
+streamlit run main.py
 # Frontend will run on http://127.0.0.1:8501 (or similar)
 ```
 
