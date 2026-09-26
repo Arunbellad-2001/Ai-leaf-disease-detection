@@ -39,7 +39,7 @@ class DiseaseAnalysisResult(BaseModel):
 class LeafDiseaseDetector:
     
     # Use Gemini model name
-    MODEL_NAME = "gemini-2.5-flash" 
+    MODEL_NAME = "gemini-3.8-flash" 
     DEFAULT_TEMPERATURE = 0.1
     DEFAULT_MAX_TOKENS = 4096
 

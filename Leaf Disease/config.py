@@ -18,7 +18,7 @@ class AppConfig:
 
     # --- AI Model Settings ---
     # NEW: Updated Model Name
-    model_name: str = "gemini-2.5-flash"
+    model_name: str = "gemini-3.8-flash"
     model_temperature: float = 0.3
     max_completion_tokens: int = 1024 # Maximum tokens in model responses
 
