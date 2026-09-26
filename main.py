@@ -91,7 +91,7 @@ st.markdown("""
 
 # WARNING: Ensure this API URL is accessible. It is likely the Vercel URL
 # of your deployed FastAPI backend.
-api_url = "http://127.0.0.1:8000"
+api_url = "https://ai-leaf-disease-detection-seven.vercel.app"
 
 # Initialize session state for result storage
 if 'result' not in st.session_state:
